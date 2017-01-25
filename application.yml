@@ -1,16 +1,16 @@
 info:
-	description: Workshop - Microservice distributed
-	url: https://github.com/spring-cloud-samples
+  description: Workshop - Microservice distributed
+  url: https://github.com/spring-cloud-samples
 eureka:
-	profiles: cloud
-	server:
-		port:8080
-	leaseRenewalIntervalInSeconds: 10
-	statusPageUrlPath: /admin/info
-	healthCheckUrlPath: /admin/health
-	client:
-	serviceUrl:
-		defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
+  profiles: cloud
+  server:
+    port:8080
+  leaseRenewalIntervalInSeconds: 10
+  statusPageUrlPath: /admin/info
+  healthCheckUrlPath: /admin/health
+  client:
+  serviceUrl:
+    defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
 config-service:
-	server:
-			port:8888
+  server:
+  port:8888

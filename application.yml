@@ -1,7 +1,28 @@
+server:
+    port: 8888
+---
 
 spring:
-  profiles: default
+    profiles: development
+server:
+    port: 9001
 
+---
+
+spring:
+    profiles: production
+    jpa:
+        generate-ddl: true
+    rabbitmq:
+        host: ${DOCKER_IP}
+    redis:
+        host: ${DOCKER_IP}
+    sleuth:
+        log:
+            json:
+                enabled: true
+        sampler:
+            percentage: 1.0
 debug: true
 endpoints:
     shutdown:
@@ -19,22 +40,6 @@ logging:
                 security: DEBUG
 server:
     port: ${PORT:${SERVER_PORT:0}}
-spring:
-    jpa:
-        generate-ddl: true
-    rabbitmq:
-        host: ${DOCKER_IP}
-    redis:
-        host: ${DOCKER_IP}
-    sleuth:
-        log:
-            json:
-                enabled: true
-        sampler:
-            percentage: 1.0
+
 
 ---	
-spring:
-  profiles: master
-server:
-    port: 8082

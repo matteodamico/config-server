@@ -1,46 +1,16 @@
 info:
-  description: Spring Cloud Samples
-  url: https://github.com/spring-cloud-samples
+	description: Workshop - Microservice distributed
+	url: https://github.com/spring-cloud-samples
 eureka:
-  instance:
-  server:
-  port: 8080
-  leaseRenewalIntervalInSeconds: 10
-  statusPageUrlPath: /admin/info
-  healthCheckUrlPath: /admin/health
-  client:
-    serviceUrl:
-      defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
-      
-
-application:
-  domain: ${APPLICATION_DOMAIN:cfapps.io}
-endpoints:
-  restart: enabled
-hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 60000
-ribbon:
-  ConnectTimeout: 3000
-  ReadTimeout: 60000
-server:
-  port: 8888
-
-management:
-  context-path: /admin
-  
-logging:
-  level:
-    com.netflix.discovery: 'OFF'
-    org.springframework.cloud: 'DEBUG'
-
-spring:
-  cloud:
-    config:
-      server:
-        git:
-          uri: https://github.com/spring-cloud-samples/config-repo
-          basedir: target/config
-
----
-spring:
-  profiles: cloud
-
+	profiles: cloud
+	server:
+		port:8080
+	leaseRenewalIntervalInSeconds: 10
+	statusPageUrlPath: /admin/info
+	healthCheckUrlPath: /admin/health
+	client:
+	serviceUrl:
+		defaultZone: http://${EUREKA_1_PORT_8761_TCP_ADDR:localhost}:8761/eureka/
+config-service:
+	server:
+			port:8888

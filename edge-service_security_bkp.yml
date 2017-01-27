@@ -3,7 +3,7 @@ security:
     user:
         password: starbucks
 server:
-    port: ${PORT:8086}
+    port: ${PORT:8443}
     ssl:
         key-store: D:my_private_key.keystore.p12
         key-store-password: starbucks

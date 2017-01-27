@@ -1,14 +1,6 @@
 quote: "Whatever the question, coffee is almost always the answer."
-security:
-    user:
-        password: starbucks
 server:
     port: ${PORT:8086}
-    ssl:
-        key-store: D:my_private_key.keystore.p12
-        key-store-password: starbucks
-        keyAlias: my_key_alias
-        keyStoreType: PKCS12
 spring:
     cloud:
         stream:

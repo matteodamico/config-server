@@ -1,6 +1,9 @@
 eureka:
     client:
         fetch-registry: false
-        register-with-eureka: false
+        registerWithEureka: true
+        useDnsForFetchingServiceUrls: true
+        eurekaServerDNSName: eureka.local
+        eurekaServerURLContext: eureka  
 server:
     port: ${PORT:8761}
